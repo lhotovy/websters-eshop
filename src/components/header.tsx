@@ -1,4 +1,5 @@
 import { navLinks } from "@/data/navLinks";
+import { v4 as uuidv4 } from 'uuid';
 
 export const Header = () => {
   
@@ -22,7 +23,7 @@ export const Header = () => {
           {navLinks.map((link) => {
             return (
               <li>
-                <a href={link.href} className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500" aria-current="page">{link.name}</a>
+                <a href={link.href} key={uuidv4()} className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500" aria-current="page">{link.name}</a>
               </li>
             )})}
         </ul>
