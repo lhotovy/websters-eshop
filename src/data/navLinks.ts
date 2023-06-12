@@ -1,11 +1,11 @@
-const navLinks = [
+export const navLinks = [
     {
         name: "Home",
-        href: "/home"
+        href: "/"
     },
     {
         name: "E-shop",
-        href: "/shop"
+        href: "/eshop"
     },
     {
         name: "Contact Us",
