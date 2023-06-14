@@ -2,17 +2,6 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { products } from "@/data/products";
 
-// export async function generateStaticParams() {    //this should generate products statically improving performance
-//   const items = ["route1", "route2"];
-
-//   return products.map((item)=> {
-//     return {
-//       product: item
-//     }
-//   })
-// }
-
-
 export default function Product({params}: any) {  
   const currentProduct = products.find((prod) => {
     return prod.title === params.product;
