@@ -1,4 +1,4 @@
-// export default function handler(req: any, res: any) {
+export default function handler() {
 //     // Get data submitted in request's body.
 //     const body = req.body
    
@@ -16,4 +16,4 @@
 //     // Found the name.
 //     // Sends a HTTP success code
 //     res.status(200).json({ data: `${body.first} ${body.last}` })
-//   }
+  }
