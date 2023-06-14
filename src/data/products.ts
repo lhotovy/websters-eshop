@@ -1,4 +1,5 @@
 type Product = {
+  id: number;
   title: string;
   name: string;
   image: string;
@@ -8,6 +9,7 @@ type Product = {
 
 export const products: Product[] = [
     {
+        id: 1,
         title: "cup",
         name: "Wooden cuppery",
         image: "/cup.jpg",
@@ -15,6 +17,7 @@ export const products: Product[] = [
         price: 10
     },
     {
+        id: 2,
         title: "carvings",
         name: "3D Wood carvings",
         image: "/carving.jpg",
@@ -22,6 +25,7 @@ export const products: Product[] = [
         price: 50
     },
     {
+        id: 3,
         title: "vase",
         name: "Wooden vase",
         image: "/vase.jpg",
@@ -29,6 +33,7 @@ export const products: Product[] = [
         price: 15
     },
     {
+        id: 4,
         title: "chess",
         name: "Wooden chess",
         image: "/chess.jpg",
@@ -36,6 +41,7 @@ export const products: Product[] = [
         price: 100
     },
     {
+        id: 5,
         title: "candleHolder",
         name: "Candle holder",
         image: "/candleHolder.jpg",
@@ -43,6 +49,7 @@ export const products: Product[] = [
         price: 10
     },
     {
+        id: 6,
         title: "sign",
         name: "Custom wood sign",
         image: "/sign.jpg",
