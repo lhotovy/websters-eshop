@@ -8,17 +8,24 @@ type Product = {
   name: string;
   image: string;
   info: string;
+  price: number;
+  tags: string;
 }
 interface ProductListProps {
-  products: Product[]
+
+  categories: string[]
+  shopItems: any
+  filterItems: (category: any) => any;
 };
 
-const ProductList: React.FC<ProductListProps> = ({products}) => {
+
+const ProductList: React.FC<ProductListProps> = ({categories, shopItems, filterItems}) => {
+
   return (
     <div className="mt-32">
-      <Tags/>
+      <Tags categories={categories} filterItems={filterItems} />
       <section className="products m-auto mt-10 mb-32 w-2/3 h-full grid grid-cols-3 gap-6 justify-center">
-          {products.map((product: any)=> {
+          {shopItems.map((product: any)=> {
             return (      
               <div key={product.id} className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <Link href={`/eshop/${product.title}`}>
