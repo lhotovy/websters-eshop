@@ -1,5 +1,6 @@
 import Link from "next/link"
 
+import {FaLinkedin, FaGithub} from "react-icons/fa"
 
 export const Footer = () => {
   return ( 
@@ -13,18 +14,16 @@ export const Footer = () => {
           </Link>
           . All Rights Reserved.
         </span>
-        <div className="flex w-1/2 space-x-6 sm:justify-center sm:mt-0">
-                <Link 
-                  href="#" 
-                  className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                    <i className="fa-brands fa-linkedin px-4 h-10"/>
-                    <span className="sr-only">LinkedIn page</span>
-                </Link>             
-                <Link href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                  <i className="fa-brands fa-github text-white h-10"/>
-                  <span className="sr-only">GitHub account</span>
-                </Link>
-            </div>
+        <div className="sm:flex sm:items-center sm:justify-between">       
+          <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0 sm:mr-8">              
+              <Link href="#" className="hover:text-gray-600 text-white sm:text-2xl">
+                <FaLinkedin/>
+              </Link>
+              <Link href="#" className="hover:text-gray-600 text-white sm:text-2xl">
+                  <FaGithub/>
+              </Link>
+          </div>
+      </div>
     </footer>
   )
 }

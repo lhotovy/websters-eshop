@@ -13,7 +13,12 @@ export const Hero = () => {
               </Link> 
           </div>
           <div className="hidden lg:mt-0 lg:col-span-5 lg:flex shadow-sm">
-              <Image src="/cups.png" alt="mockup"/>
+              <Image 
+                src="/cups.png" 
+                alt="mockup"
+                width={450}
+                height={180}
+              />
           </div>                
         </div>
       </section>
