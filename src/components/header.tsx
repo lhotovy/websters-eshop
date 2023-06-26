@@ -1,4 +1,5 @@
 import { navLinks } from "@/data/navLinks";
+import Image from "next/image";
 import Link from "next/link"
 
 export const Header = () => {
@@ -11,7 +12,7 @@ export const Header = () => {
           className="flex items-center" 
           href="/" 
         >
-          <img 
+          <Image 
             src="./logo.png" 
             className="h-12 mr-10" 
             alt="Company logo"/>

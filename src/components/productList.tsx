@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from 'react';
 import Tags from "./tags";
+import Image from "next/image";
 
 type Product = {
   id: number;
@@ -29,7 +30,7 @@ const ProductList: React.FC<ProductListProps> = ({categories, shopItems, filterI
             return (      
               <div key={product.id} className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <Link href={`/eshop/${product.title}`}>
-                    <img className="p-8 rounded-t-lg" src={product.image} alt={product.name} />
+                    <Image className="p-8 rounded-t-lg" src={product.image} alt={product.name} />
                 </Link>
                 <div className="px-5 pb-5">
                     <Link href={`/eshop/${product.title}`}>
