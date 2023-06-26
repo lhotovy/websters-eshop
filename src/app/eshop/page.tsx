@@ -13,7 +13,7 @@ export default function Page() {
   const [categories, setCategories] = useState(allCategories);
   const [shopItems, setShopItems] = useState(products);
   
-  const filterItems = (category: any) => {
+  const filterItems = (category: string) => {
     if (category === "All") {
       setShopItems(products);
       return;

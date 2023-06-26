@@ -19,16 +19,19 @@
 
 
 
-export function GET(request: Request, response: Response) {
-    console.log(request);
-    console.log(response);
+export async function GET(request: Request, response: Response) {
+    console.log("koo");
+    console.log("pooo");
     
 
-    return new Response()
+    //return new Response()
     
   }
   
-export function POST(request: Request) {
-    console.log("POST request");
+export async function POST(request: Request, response: Response) {
+    console.log("juuu");
+    console.log("dbsdvfs");
+
+    //return new Response()
     
   }

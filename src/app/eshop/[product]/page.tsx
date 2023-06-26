@@ -2,7 +2,11 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { products } from "@/data/products";
 
-export default function Product({params}: any) {  
+interface ProductParams {
+  product: string;
+}
+
+export default function Product({params}: {params: ProductParams}) {  
   const currentProduct = products.find((prod) => {
     return prod.title === params.product;
   });
@@ -17,7 +21,6 @@ export default function Product({params}: any) {
             <img src={currentProduct?.image} alt={currentProduct?.title} className="inline-block text-right" />
           </div>          
       </section>
-
       <Footer/>
     </>
 
