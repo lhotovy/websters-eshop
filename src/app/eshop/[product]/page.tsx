@@ -19,7 +19,12 @@ export default function Product({params}: {params: ProductParams}) {
           <h2 className="mt-64 text-center block text-xl mb-12">{currentProduct?.name}</h2>
           <div className="product-content grid grid-cols-2 gap-16">
             <p className="inline-block text-justify">{currentProduct?.info}</p>
-            <Image src={currentProduct?.image!} alt={currentProduct?.title!} className="inline-block text-right" />
+            <Image 
+              src={currentProduct?.image!} 
+              alt={currentProduct?.title!} 
+              className="inline-block text-right"
+              width={500}
+              height={300} />
           </div>          
       </section>
       <Footer/>

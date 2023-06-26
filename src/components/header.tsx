@@ -13,9 +13,12 @@ export const Header = () => {
           href="/" 
         >
           <Image 
-            src="./logo.png" 
+            src="/logo.png" 
             className="h-12 mr-10" 
-            alt="Company logo"/>
+            alt="Company logo"
+            width={50}
+            height={20}
+          />
           <span 
             className="self-center text-2xl font-noto font-semibold tracking-wider whitespace-nowrap dark:text-white"
           >
