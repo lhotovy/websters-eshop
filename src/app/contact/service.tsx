@@ -2,45 +2,56 @@
 import ContactForm from '@/components/contactForm';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
-import React, { BaseSyntheticEvent } from 'react';
+import React, { BaseSyntheticEvent, useState } from 'react';
+import { sendMessage } from '../lib/helpers';
+import { useRouter } from 'next/navigation';
 
-const handleSubmit = async (event: BaseSyntheticEvent) => {
-   
-    event.preventDefault();
-  
-    //Get data from the form.
-    const formData = {
-      firstName: event.target[0].value,
-      lastName: event.target[1].value,
-      email: event.target[2].value,
-      textInput: event.target[3].value
-    };
-  
-    // Send the data to the server in JSON format.
-    const JSONdata = JSON.stringify(formData);
-    const endpoint = '/api/contact'
-  
-    // Send the form data to API
-    const response = await fetch(endpoint, 
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSONdata
-      });
-      
-    const result = await response.json();
-    console.log("rsult", result)
-    return result;
-  }
+export interface IFormSubmission {
+  isError?: boolean;
+  isLoading?: boolean;
+}
+
+export type FormData = {
+  firstName: string
+  lastName: string
+  email: string
+  textInput: string
+};    
 
 export const Service = () => {
+  const router = useRouter()
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    textInput: ""
+  });
+  
+  const handleSubmit = async(event: BaseSyntheticEvent) => {
+    event.preventDefault();
+    const res = await sendMessage(formData);
+    console.log(res);    
+    
+    if (res) {
+      setIsSuccess(true);
+ 
+      setTimeout(()=> {
+        router.push("/")
+      }, 5000)
+      
+      
+    } else {
+      setIsSuccess(false)
+    }    
+    return res    
+  }
+
   return (
     <>
-    <Header/>
-    <ContactForm handleSubmit={handleSubmit} />
-    <Footer/>      
-  </>
+      <Header/>
+      <ContactForm handleSubmit={handleSubmit} isSuccess={isSuccess} formData={formData} setData={setFormData} />
+      <Footer/>    
+    </>
   )
 }

@@ -5,11 +5,11 @@ export const metadata = {
   description: 'Contact us to get more information about products, delivery and so on.',
 }
 
-const Contact: React.FC = () => {
+const Contact = () => {
 
-      return (
-        <Service/>
-      )
+    return (     
+        <Service />
+    )
 };
 
 export default Contact;

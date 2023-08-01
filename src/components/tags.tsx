@@ -1,9 +1,9 @@
-interface TagsProps {
+interface ITagsProps {
     categories: any;
     filterItems: (category: any) => any;
 };
 
-const Tags: React.FC<TagsProps> = ({categories, filterItems}) => {
+export const Tags = ({categories, filterItems}: ITagsProps) => {
     
     return (
         <section className='block w-4/5 text-right'>

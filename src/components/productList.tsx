@@ -13,13 +13,12 @@ type Product = {
   tags: string;
 }
 interface ProductListProps {
-
   categories: string[]
   shopItems: any
   filterItems: (category: any) => any;
 };
 
-const ProductList: React.FC<ProductListProps> = ({categories, shopItems, filterItems}) => {
+export const ProductList = ({categories, shopItems, filterItems}: ProductListProps) => {
 
   return (
     <div className="mt-32">
