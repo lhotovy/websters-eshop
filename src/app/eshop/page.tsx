@@ -1,10 +1,9 @@
 "use client"
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import  ProductList from "@/components/productList";
+import { ProductList } from "@/components/productList";
 import { products } from "@/data/products";
 import { useState } from 'react';
-
 
 const allCategories = ["All", "Home", "Art", "Free time"];
 
@@ -27,5 +26,5 @@ export default function Page() {
       <ProductList categories={categories} filterItems={filterItems} shopItems={shopItems} />
       <Footer/>
     </>
-  )
-}
+  );
+};

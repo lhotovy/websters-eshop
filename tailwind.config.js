@@ -14,7 +14,8 @@ module.exports = {
       },
       fontFamily: {
         "cardo": ["Cardo", "serif"],
-        "noto": ["Noto Serif", "serif"]
+        "noto": ["Noto Serif", "serif"],
+        "borel": ["Borel", "cursive"]
       },
     },
   },

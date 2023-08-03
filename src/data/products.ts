@@ -1,12 +1,4 @@
-type Product = {
-  id: number;
-  title: string;
-  name: string;
-  image: string;
-  info: string;
-  price: number;
-  tags: string;
-}
+import { Product } from "@/lib/types"
 
 export const products: Product[] = [
     {

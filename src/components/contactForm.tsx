@@ -1,15 +1,8 @@
-import React, { BaseSyntheticEvent } from 'react';
+import React from 'react';
 import { SuccessMessage } from './sucessMessage';
-import { FormData } from '@/app/contact/service';
+import { IContactForm } from '@/lib/types';
 
-interface IContactForm {
-    handleSubmit?: (event: BaseSyntheticEvent) => {} 
-    isSuccess?: boolean
-    formData: FormData
-    setData: (formData: FormData) => void
-}
-
-export const ContactForm = ({handleSubmit, isSuccess, formData, setData}: IContactForm) => { 
+const ContactForm = ({handleSubmit, isSuccess, formData, setData}: IContactForm) => { 
      
     return (
         <>

@@ -2,16 +2,13 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { products } from "@/data/products";
 import Image from "next/image";
-
-interface ProductParams {
-  product: string;
-}
+import { ProductParams } from "@/lib/types";
 
 export default function Product({params}: {params: ProductParams}) {  
   const currentProduct = products.find((prod) => {
     return prod.title === params.product;
   });
-  
+
   return (
     <>
       <Header/>
@@ -29,6 +26,5 @@ export default function Product({params}: {params: ProductParams}) {
       </section>
       <Footer/>
     </>
-
-  )
-}
+  );
+};

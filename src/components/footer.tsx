@@ -1,5 +1,4 @@
 import Link from "next/link"
-
 import {FaLinkedin, FaGithub} from "react-icons/fa"
 
 export const Footer = () => {
@@ -14,6 +13,7 @@ export const Footer = () => {
           </Link>
           . All Rights Reserved.
         </span>
+        <div className="signature font-borel">by Lukáš Hotový</div>
         <div className="sm:flex sm:items-center sm:justify-between">       
           <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0 sm:mr-8">              
               <Link href="#" className="hover:text-gray-600 text-white sm:text-2xl">
@@ -25,5 +25,5 @@ export const Footer = () => {
           </div>
       </div>
     </footer>
-  )
-}
+  );
+};

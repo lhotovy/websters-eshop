@@ -1,13 +1,10 @@
-interface ITagsProps {
-    categories: any;
-    filterItems: (category: any) => any;
-};
+import { ITagsProps } from "@/lib/types";
 
-export const Tags = ({categories, filterItems}: ITagsProps) => {
+const Tags = ({categories, filterItems}: ITagsProps) => {
     
     return (
-        <section className='block w-4/5 text-right'>
-            {categories.map((category: any)=> {
+        <section className='inline-block w-3/5 '>
+            {categories.map((category: string)=> {
                 return  (           
                     <button 
                         key={category} 

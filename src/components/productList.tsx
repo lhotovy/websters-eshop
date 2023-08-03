@@ -1,30 +1,33 @@
 import Link from "next/link";
-import React from 'react';
+import React, { useContext } from 'react';
 import Tags from "./tags";
 import Image from "next/image";
-
-type Product = {
-  id: number;
-  title: string;
-  name: string;
-  image: string;
-  info: string;
-  price: number;
-  tags: string;
-}
-interface ProductListProps {
-  categories: string[]
-  shopItems: any
-  filterItems: (category: any) => any;
-};
+import { ShopContext } from "@/lib/context";
+import { ProductListProps, Product } from "@/lib/types";
 
 export const ProductList = ({categories, shopItems, filterItems}: ProductListProps) => {
 
+const {cartItems, addToCart, getNumberOfItems} = useContext(ShopContext);
+const cartItemsAmount = getNumberOfItems(); 
+
   return (
     <div className="mt-32">
-      <Tags categories={categories} filterItems={filterItems} />
+      <div className="subFoot flex justify-between w-2/3 mx-auto relative">
+        <Tags categories={categories} filterItems={filterItems} />
+        <Link href="/cart">
+          <Image 
+                src="/cartIcon.png" 
+                className="mr-10 inline-flex items-end" 
+                alt="cart"
+                width={35}
+                height={35}
+              />
+              <p className="counter bg-red-700 text-white rounded-full text-sm text-center w-5 absolute inline-block right-8 top-5">{cartItemsAmount}</p>
+        </Link>   
+      </div>   
       <section className="products m-auto mt-10 mb-32 w-2/3 h-full grid grid-cols-3 gap-6 justify-center">
-          {shopItems.map((product: any)=> {
+          {shopItems.map((product: Product) => {
+            const cartItemAmount = cartItems[product.id]
             return (      
               <div key={product.id} className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <Link href={`/eshop/${product.title}`}>
@@ -50,7 +53,7 @@ export const ProductList = ({categories, shopItems, filterItems}: ProductListPro
                     </div>
                     <div className="flex items-center justify-between">
                         <span className="text-xl font-bold text-gray-900 dark:text-white">{`€ ${product.price}`}</span>
-                        <a href="#" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-amber-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
+                        <button onClick={() => addToCart(product.id)} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-amber-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart {cartItemAmount! > 0 && <>({cartItemAmount})</>}</button>
                     </div>
                 </div>
               </div>   
@@ -58,9 +61,4 @@ export const ProductList = ({categories, shopItems, filterItems}: ProductListPro
           })}             
       </section>    
     </div>
-  )}
-   
-  export default ProductList;
-
-
-
+  )};
