@@ -56,3 +56,9 @@ export type Context = {
       getCartTotal: () => number
       getNumberOfItems: () => number
 };
+
+export type NavLink = {
+    name: string
+    id: number
+    href: string
+};

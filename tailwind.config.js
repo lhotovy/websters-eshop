@@ -15,7 +15,8 @@ module.exports = {
       fontFamily: {
         "cardo": ["Cardo", "serif"],
         "noto": ["Noto Serif", "serif"],
-        "borel": ["Borel", "cursive"]
+        "borel": ["Borel", "cursive"],
+        "merriweather": ["Merriweather", "serif"]
       },
     },
   },

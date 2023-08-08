@@ -19,7 +19,7 @@ export default function RootLayout({
         <head>
           <link rel="icon" href="/favicon.png" sizes="any" />
         </head>
-        <body className={inter.className}>
+        <body className={`${inter.className} max-w-screen`}>
           <ShopContextProvider>
             {children}
           </ShopContextProvider>
