@@ -55,6 +55,8 @@ export type Context = {
       updateCartItemCount: (newAmount: number, itemId: number) => void
       getCartTotal: () => number
       getNumberOfItems: () => number
+      clearCartItem: (itemId: number) => void
+      clearCart: () => void
 };
 
 export type NavLink = {

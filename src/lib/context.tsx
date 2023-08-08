@@ -37,18 +37,26 @@ export const ShopContextProvider = ({ children }: { children: React.ReactNode })
   }
 
   const addToCart = (itemId: number) => {
-    setCartItems((prev) => ({...prev, [itemId]: prev[itemId]! + 1}))
+    setCartItems((prev) => ({...prev, [itemId]: prev[itemId]! + 1}));
   };
 
   const removeFromCart = (itemId: number) => {
-    setCartItems((prev) => ({...prev, [itemId]: prev[itemId]! - 1}))
+    setCartItems((prev) => ({...prev, [itemId]: prev[itemId]! - 1}));
   };
 
   const updateCartItemCount = (newAmount: number, itemId: number) => {
-    setCartItems((prev) => ({...prev, [itemId]: newAmount}))
+    setCartItems((prev) => ({...prev, [itemId]: newAmount}));
   };
 
-  const contextValue = {cartItems, addToCart, removeFromCart, updateCartItemCount, getCartTotal, getNumberOfItems};
+  const clearCartItem = (itemId: number) => {
+    setCartItems((prev) => ({...prev, [itemId]: 0}));
+  };
+
+  const clearCart = () => {
+    setCartItems(getDefaultCart());
+  };
+
+  const contextValue = {cartItems, addToCart, removeFromCart, updateCartItemCount, getCartTotal, getNumberOfItems, clearCartItem, clearCart};
 
   return (
     <ShopContext.Provider
