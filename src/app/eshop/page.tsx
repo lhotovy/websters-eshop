@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { ProductList } from "@/components/productList";
 import { products } from "@/data/products";
 import { useState } from 'react';
+import { Product } from "@/lib/types";
 
 const allCategories = ["All", "Home", "Art", "Free time"];
 
@@ -17,7 +18,7 @@ export default function Page() {
       setShopItems(products);
       return;
     };
-    const newProducts = products.filter((product)=> product.tags === category);
+    const newProducts = products.filter((product: Product)=> product.tags === category);
     setShopItems(newProducts);
   }
   return (

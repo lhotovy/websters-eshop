@@ -14,7 +14,7 @@ export const CartItem = ({data}: {data: Product}) => {
           <div className="pb-3 sm:pb-4 p-4">
               <div className="flex items-center ">
                 <div className="flex-shrink-0 mr-4">
-                  <Image className="w-8 h-8 rounded-full" src={image} alt={name}></Image>                 
+                  <Image className="w-8 h-8 rounded-full" src={image} alt={name} width={50} height={50}></Image>                 
                 </div>
                 <Link href={`/eshop/${title}`}>
                   <div className="flex-1 inline-flex">

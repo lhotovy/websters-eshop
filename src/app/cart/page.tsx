@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import { products } from '@/data/products';
 import Link from 'next/link';
 import { Header } from '@/components/header';
+import { Product } from '@/lib/types';
 
 const CartContainer = () => {
   
@@ -20,7 +21,7 @@ const CartContainer = () => {
           <h1 className='cart-heading text-center text-2xl mt-28 uppercase'>Your cart Items</h1>
         </div>
         <div className="cartItems mt-24">
-          {products.map((product) => {      
+          {products.map((product: Product) => {      
             if (cartItems[product.id] !== 0) {
               return <CartItem key={product.id} data={product}/>
             }

@@ -2,10 +2,10 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { products } from "@/data/products";
 import Image from "next/image";
-import { ProductParams } from "@/lib/types";
+import { Product, ProductParams } from "@/lib/types";
 
 export default function Product({params}: {params: ProductParams}) {  
-  const currentProduct = products.find((prod) => {
+  const currentProduct = products.find((prod: Product) => {
     return prod.title === params.product;
   });
 
