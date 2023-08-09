@@ -7,7 +7,7 @@ const ContactForm = ({handleSubmit, isSuccess, formData, setData}: IContactForm)
     return (
         <>
             <form 
-                className='md:w-2/5 w-2/3 m-auto mt-48 mb-24' 
+                className='md:w-2/5 w-2/3 m-auto mt-48 md:mb-24 mb-48' 
                 method='POST' 
                 onSubmit={handleSubmit}>
                 <div className="grid gap-6 mb-6 md:grid-cols-2">
