@@ -5,9 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { useSession, signOut } from "next-auth/react";
 
 export const Header = () => {
-
+  const session = useSession();
   const pathname = usePathname();  
   const [expanded, setExpanded] = useState("hidden");
   
@@ -31,15 +32,32 @@ export const Header = () => {
             >
               Webster's
             </span>
-          </Link>  
-        <div className="flex md:order-2 md:mr-16">
-            <button 
-              type="button"          
-              className="text-amber-900 bg-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-white dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-                Login
-            </button>
-        </div>
+          </Link>
+          { !session || !session?.data?.user ? ( 
+          <div className="flex md:order-2 md:mr-16">
+            <Link href="/login">      
+              <button 
+                type="button"          
+                className="text-amber-900 bg-white hover:bg-blue-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-white dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                  Login
+              </button>
+            </Link>      
+          </div>
+           )
+          :
+          (
+          <div className="flex md:order-2 md:mr-16">                 
+              <button 
+                type="button"
+                onClick={()=> signOut()}          
+                className="text-amber-900 bg-white hover:bg-blue-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-white dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                  Logout
+              </button>               
+          </div>
+          )
+        }          
         <div 
           className={`items-center hidden justify-between ${expanded} md:flex md:order-1`} 
           id="navbar-sticky">

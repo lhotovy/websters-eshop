@@ -1,6 +1,7 @@
 import { ShopContextProvider } from '@/lib/context';
 import './globals.css';
 import { Inter } from 'next/font/google';
+import { NextAuthProvider } from '../lib/auth-provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,9 +21,11 @@ export default function RootLayout({
           <link rel="icon" href="/favicon.png" sizes="any" />
         </head>
         <body className={`${inter.className} max-w-screen`}>
-          <ShopContextProvider>
-            {children}
-          </ShopContextProvider>
+          <NextAuthProvider>
+            <ShopContextProvider>
+              {children}
+            </ShopContextProvider>
+          </NextAuthProvider>  
         </body>
       </html>    
   );

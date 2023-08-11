@@ -1,4 +1,5 @@
 import { BaseSyntheticEvent } from 'react';
+import { PrismaClient } from '@prisma/client';
 
 export interface IFormSubmission {
     isError?: boolean
@@ -64,3 +65,7 @@ export type NavLink = {
     id: number
     href: string
 };
+
+declare global {
+    var prisma: PrismaClient | undefined;
+  }
