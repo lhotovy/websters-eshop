@@ -23,7 +23,8 @@ const Dashboard = () => {
                 <div>
                     Hi, {session?.user?.name}
                 </div>
-                <p>This is you personal page. You'll be able to do more here in the future. For now just enjoy our 
+                <p className="md:w-4/5 md:text-center w-2/3 text-justify">
+                    This is you personal page. You'll be able to do more here in the future. For now just enjoy our 
                     <span className="ml-3 text-blue-300">  
                         <Link href="/eshop">
                             e-shop
