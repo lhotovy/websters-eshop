@@ -5,10 +5,10 @@ import { Header } from '@/components/header';
 import React, { BaseSyntheticEvent, useState } from 'react';
 import { sendMessage } from '@/lib/helpers';
 import { useRouter } from 'next/navigation';
+import { toast } from 'react-hot-toast';
 
 export const Service = () => {
   const router = useRouter()
-  const [isSuccess, setIsSuccess] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -20,25 +20,23 @@ export const Service = () => {
     event.preventDefault();
     const response = await sendMessage(formData);   
     
-    if (response) {
-      setIsSuccess(true);
+    if (response) { 
+      toast.success(`Thank you, ${formData.firstName}. We have received your message!`, {duration: 4000});
  
       setTimeout(()=> {
         router.push("/")
-      }, 5000);
-      
-      
+      }, 5000);   
     } else {
-      setIsSuccess(false);
-    }    
-    return response;    
+      toast.error("Something went wrong.");
+    }
+    return response;
   };
 
   return (
     <>
       <Header/>
-      <ContactForm handleSubmit={handleSubmit} isSuccess={isSuccess} formData={formData} setData={setFormData} />
+      <ContactForm handleSubmit={handleSubmit} formData={formData} setData={setFormData} />
       <Footer/>    
     </>
-  )
-}
+  );
+};

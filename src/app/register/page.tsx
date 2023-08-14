@@ -2,6 +2,7 @@
 import { Header } from '@/components/header';
 import { useRouter } from 'next/navigation';
 import { BaseSyntheticEvent, useState } from "react";
+import { toast } from 'react-hot-toast';
 
 const Register = () => {
     const router = useRouter();
@@ -23,11 +24,11 @@ const Register = () => {
             });
         const data = await res.json();
 
-        if (data) {
-            console.log("User has been registered!");
+        if (data) { 
+            toast.success("User has been registered!");
             router.push("/login");            
         } else {
-            console.log("An error occured!");            
+            toast.error("Something went wrong!");            
         };        
     };
 

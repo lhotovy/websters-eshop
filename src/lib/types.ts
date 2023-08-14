@@ -18,8 +18,7 @@ export interface ProductParams {
 };
 
 export interface IContactForm {
-    handleSubmit?: (event: BaseSyntheticEvent) => {} 
-    isSuccess?: boolean
+    handleSubmit?: (event: BaseSyntheticEvent) => {}   
     formData: FormData
     setData: (formData: FormData) => void
 };

@@ -4,7 +4,8 @@ import { signIn, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Header } from "@/components/header";
-import {FaGoogle, FaGithub} from "react-icons/fa";
+import { FaGoogle, FaGithub } from "react-icons/fa";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
     const session = useSession();
@@ -23,10 +24,17 @@ const Login = () => {
     const loginUser = async (event: BaseSyntheticEvent) => {
         event.preventDefault();
         signIn("credentials", {...loginFormData, redirect: false})
-            .then(()=> console.log("User has been logged in!"))
-            .catch(()=> console.log("An error occured!"));      
-    };
+            .then((callback)=> {
+                if (callback?.error) {
+                    toast.error(callback.error);   
+                };
 
+                if (callback?.ok && !callback?.error) {
+                    toast.success("Logged in successfully!");
+                };
+        });             
+    };
+    
     return (
         <>
             <Header/>
