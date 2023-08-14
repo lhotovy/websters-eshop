@@ -40,16 +40,16 @@ const Login = () => {
             <Header/>
             <div className="mt-48">      
                 <h1 className="mx-auto text-center mt-24 text-2xl">
-                    Login to Your Account
+                    Log in to Your Account
                 </h1>
-                <div className="inline-flex justify-center space-x-8 w-full mt-24 mx-auto">                   
-                    <button onClick={()=> signIn("github")} className="border-2 bg-yellow-500 rounded-2xl text-black p-4 inline-flex items-center">
+                <div className="md:inline-flex md:justify-center flex md:flex-row flex-col md:space-x-8 md:w-full w-3/5 mt-24 mb-12 mx-auto">                   
+                    <button onClick={()=> signIn("github")} className="border-2 bg-yellow-500 rounded-2xl text-black md:p-4 p-3 md:inline-flex md:items-center mb-12 md:mb-0">
                         <FaGithub className="inline mr-4 text-2xl"/>
-                        Login with Github
+                        Log in with Github
                     </button>
-                    <button onClick={()=> signIn("google")} className="border-2 bg-purple-500 rounded-2xl text-black p-4 inline-flex items-center">
+                    <button onClick={()=> signIn("google")} className="border-2 bg-purple-500 rounded-2xl text-black md:p-4 p-3 md:inline-flex md:items-center">
                         <FaGoogle className="inline mr-4 text-2xl"/>
-                        Login with Google
+                        Log in with Google
                     </button>
                 </div>    
                 <form 
@@ -94,7 +94,7 @@ const Login = () => {
                     <button 
                         type="submit" 
                         className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Login
+                            Log In
                     </button>
                     <div className="mt-10">
                         <p>No account yet? 
