@@ -63,6 +63,7 @@ export type NavLink = {
     name: string
     id: number
     href: string
+    test: string
 };
 
 declare global {

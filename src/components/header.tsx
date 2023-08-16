@@ -18,7 +18,8 @@ export const Header = () => {
         <div className="flex flex-wrap mx-auto items-center justify-between pl-6 py-4 w-5/6">
           <Link 
             className="flex items-center" 
-            href="/" 
+            href="/"
+            data-test="logoButton" 
           >
             <Image 
               src="/logo.png" 
@@ -38,7 +39,7 @@ export const Header = () => {
             <Link href="/login">      
               <button 
                 type="button"          
-                className="text-amber-900 bg-white hover:bg-blue-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-white dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="loginButton text-amber-900 bg-white hover:bg-blue-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-white dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                   Login
               </button>
@@ -69,6 +70,7 @@ export const Header = () => {
                     href={link.href} 
                     className={`${pathname == link.href ? "active" : ""} block py-2 pl-3 pr-4 tracking-wider text-white bg-blue-700 rounded md:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500`} 
                     aria-current="page"
+                    data-test={`nav${link.test}`}
                   >
                     {link.name}
                   </Link>
@@ -89,7 +91,7 @@ export const Header = () => {
               aria-expanded="false"
             >
               <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
               </svg>
             </button>           
         </div>
@@ -103,6 +105,7 @@ export const Header = () => {
               <Link 
                 href={link.href} 
                 className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                data-test={`nav${link.test}`}
               >
                 {link.name}
               </Link>

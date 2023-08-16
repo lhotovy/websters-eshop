@@ -1,0 +1,16 @@
+{
+  "homePageLinkUrls": [
+    "https://github.com/lhotovy",
+    "/eshop",
+    "/contact",
+    "/login"
+  ],
+  "homePageLinks": [
+    "footer-linkedin",
+    "footer-github",
+    "navEshop",
+    "navHome",
+    "navContact",
+    "logoButton"
+  ]
+}

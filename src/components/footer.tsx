@@ -22,10 +22,10 @@ export const Footer = () => {
         <div className="flex justify-between md:space-x-64 md:mr-12">         
             <div className="inline-flex mr-4">       
               <div className="md:flex inline-flex my-2 md:my-auto space-x-6 justify-right">              
-                  <Link href="https://www.linkedin.com/in/lhotovy/" className="hover:text-gray-600 text-white md:text-2xl">
+                  <Link href="https://www.linkedin.com/in/lhotovy/" className="hover:text-gray-600 text-white md:text-2xl" data-test="footer-linkedin">
                     <FaLinkedin/>
                   </Link>
-                  <Link href="https://github.com/lhotovy" className="hover:text-gray-600 text-white md:text-2xl">
+                  <Link href="https://github.com/lhotovy" className="hover:text-gray-600 text-white md:text-2xl" data-test="footer-github">
                       <FaGithub/>
                   </Link>
               </div>

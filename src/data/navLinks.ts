@@ -2,16 +2,19 @@ export const navLinks = [
     {
         name: "Home",
         id: 1,
-        href: "/"
+        href: "/",
+        test: "Home"
     },
     {
         name: "E-Shop",
         id: 2,
-        href: "/eshop"
+        href: "/eshop",
+        test: "Eshop"
     },
     {
         name: "Contact",
         id: 3,
-        href: "/contact"
+        href: "/contact",
+        test: "Contact"
     }
 ]
