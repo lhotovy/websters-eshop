@@ -1,0 +1,48 @@
+name: Build and Test Websters Eshop
+
+on:
+  push:
+    branches: ["dev"]
+  pull_request:
+    branches: ["dev"]
+
+jobs:
+  cypress:
+    env:
+      POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
+      NEXT_PUBLIC_DATABASE_URL: ${{ secrets.NEXT_PUBLIC_DATABASE_URL }}
+      NEXT_PUBLIC_SECRET: ${{ secrets.NEXT_PUBLIC_SECRET }}
+      NEXT_PUBLIC_GITHUB_ID: ${{ secrets.NEXT_PUBLIC_GITHUB_ID }}
+      NEXT_PUBLIC_GITHUB_SECRET: ${{ secrets.NEXT_PUBLIC_GITHUB_SECRET }}
+      NEXT_PUBLIC_GOOGLE_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_ID }}
+      NEXT_PUBLIC_GOOGLE_SECRET: ${{ secrets.NEXT_PUBLIC_GOOGLE_SECRET }}
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Run cypress tests
+        uses: cypress-io/github-action@v5
+        with:
+          build: pnpm run build
+          start: pnpm start
+
+      - name: Upload cypress screenshots
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
+      - name: Upload cypress videos
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-videos
+          path: cypress/videos
