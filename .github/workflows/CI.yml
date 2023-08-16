@@ -30,8 +30,8 @@ jobs:
       - name: Run cypress tests
         uses: cypress-io/github-action@v5
         with:
-          build: pnpm run build
-          start: pnpm start
+          build: npm run build
+          start: npm start
 
       - name: Upload cypress screenshots
         uses: actions/upload-artifact@v3
