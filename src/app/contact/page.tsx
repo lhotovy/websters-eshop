@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ContactService from "./service";
 
 export const metadata: Metadata = {
-  title: 'Contact - Webster\'s Woodcrafts',
+  title: 'Contact - Webster\'s',
   description: 'Contact us to get more information about products, delivery and so on.',
 };
 
