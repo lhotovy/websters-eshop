@@ -16,7 +16,8 @@ module.exports = {
         "cardo": ["Cardo", "serif"],
         "noto": ["Noto Serif", "serif"],
         "borel": ["Borel", "cursive"],
-        "merriweather": ["Merriweather", "serif"]
+        "merriweather": ["Merriweather", "serif"],  
+        "kanit": ["Kanit", "sans-serif"]
       },
     },
   },

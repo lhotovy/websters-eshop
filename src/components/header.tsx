@@ -29,7 +29,7 @@ export const Header = () => {
               height={20}
             />
             <span 
-              className="self-center hidden md:inline text-2xl font-merriweather italic tracking-wider whitespace-nowrap dark:text-white"
+              className="self-center hidden md:inline text-2xl font-merriweather tracking-wider whitespace-nowrap dark:text-white"
             >
               Webster's
             </span>
