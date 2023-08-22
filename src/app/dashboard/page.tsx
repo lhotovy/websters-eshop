@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import EshopButton from "@/components/eshopButton";
 
 const Dashboard = () => {
-
     const { data: session } = useSession();
     const router = useRouter();
     

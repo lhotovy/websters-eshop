@@ -3,11 +3,19 @@ import { Header } from "@/components/header";
 import { products } from "@/data/products";
 import Image from "next/image";
 import { Product, ProductParams } from "@/lib/types";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "",
+  description: "See details of our wonderful product",
+};
 
 export default function Product({params}: {params: ProductParams}) {  
   const currentProduct = products.find((prod: Product) => {
     return prod.title === params.product;
   });
+
+  metadata.title = `${currentProduct?.name} - Webster\'s`;
 
   return (
     <>

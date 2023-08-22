@@ -7,7 +7,7 @@ import { sendMessage } from '@/lib/helpers';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-hot-toast';
 
-export const Service = () => {
+const ContactService = () => {
   const router = useRouter()
   const [formData, setFormData] = useState({
     firstName: "",
@@ -40,3 +40,4 @@ export const Service = () => {
     </>
   );
 };
+export default ContactService;

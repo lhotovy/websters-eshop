@@ -3,10 +3,11 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import { NextAuthProvider } from '../lib/auth-provider';
 import ToasterContext from '@/lib/toasterContext';
+import { Metadata } from "next";
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Webster\'s Woodcrafts',
   description: 'This is an online shop with awesome woodcrafts',
 };
