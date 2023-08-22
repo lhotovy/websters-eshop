@@ -13,13 +13,13 @@ export default function Product({params}: {params: ProductParams}) {
     <>
       <Header/>
       <section className="container mx-auto w-2/3 h-vw">
-          <h2 className="mt-64 text-center block text-xl mb-12">{currentProduct?.name}</h2>
-          <div className="product-content grid grid-cols-2 gap-16">
-            <p className="inline-block text-justify">{currentProduct?.info}</p>
+          <h2 className="md:mt-64 mt-32 uppercase block md:text-left text-center text-2xl text-slate-300 mb-12">{currentProduct?.name}</h2>
+          <div className="product-content grid md:grid-cols-2 grid-cols-1 gap-16">
+            <p className="md:inline-block block text-justify">{currentProduct?.info}</p>
             <Image 
               src={currentProduct?.image!} 
               alt={currentProduct?.title!} 
-              className="inline-block text-right"
+              className="md:inline-block block text-right"
               width={500}
               height={300} />
           </div>          
