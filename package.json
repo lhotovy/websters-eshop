@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "prisma generate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "cypress run --record --key fafc704d-f507-4a49-9995-6c571578ae9a"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",

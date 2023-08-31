@@ -1,6 +1,7 @@
 import { defineConfig } from "cypress";
 
 export default defineConfig({
+  projectId: "s6mjto",
   e2e: {
     baseUrl: "http://localhost:3000",
     defaultCommandTimeout: 15000,
