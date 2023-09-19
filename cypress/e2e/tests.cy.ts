@@ -1,4 +1,3 @@
-import { isJsxElement } from "typescript";
 
 describe('Home page', () => {
   it('Check links', () => {
@@ -13,7 +12,6 @@ describe('Home page', () => {
       homePageLinks.forEach((link: string) => {
         cy.get(`[data-test='${link}']`).should("have.attr", "href");
       });
-
     });   
   });
 });
