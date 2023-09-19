@@ -29,6 +29,7 @@ jobs:
       NEXT_PUBLIC_GITHUB_SECRET: ${{ secrets.NEXT_PUBLIC_GITHUB_SECRET }}
       NEXT_PUBLIC_GOOGLE_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_ID }}
       NEXT_PUBLIC_GOOGLE_SECRET: ${{ secrets.NEXT_PUBLIC_GOOGLE_SECRET }}
+      NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
