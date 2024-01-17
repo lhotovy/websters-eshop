@@ -33,7 +33,7 @@ const CartContainer = () => {
       </div>
       {totalAmount > 0 ? (
       <div className="checkout md:mx-0 mx-auto md:w-3/4">
-        <p className='mb-5 md:mr-4 md:text-right text-center tracking-wider'>Subtotal: €{totalAmount}</p>
+        <p data-test="subtotal" className='mb-5 md:mr-4 md:text-right text-center tracking-wider'>Subtotal: €{totalAmount}</p>
         <div className='flex justify-center w-full md:justify-end'>
           <button className='inline-block border-2 rounded-2xl md:text-base text-sm tracking-wide p-2 text-white bg-red-700 mx-2' onClick={() => clearCart()}>Clear Cart</button>          
           <button className='inline-block border-2 rounded-2xl md:text-base text-sm tracking-wide p-2 text-yellow-600 mx-2 bg-slate-800'><Link href="/eshop">Continue Shopping</Link></button>

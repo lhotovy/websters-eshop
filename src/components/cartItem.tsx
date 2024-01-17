@@ -36,7 +36,7 @@ export const CartItem = ({data}: {data: Product}) => {
                     /> 
                     <button onClick={() => addToCart(id)}> + </button>     
                 </div>
-                <div className="inline-flex items-right text-sm dark:text-yellow-600 font-semibold text-gray-900">         
+                <div data-test="itemTotal" className="inline-flex items-right text-sm dark:text-yellow-600 font-semibold text-gray-900">         
                   €{data.price * cartItems[id]!}
                 </div>
                 <div className="trash-icon inline-flex ml-12">
