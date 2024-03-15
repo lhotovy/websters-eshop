@@ -4,7 +4,6 @@ import { useContext }  from "react";
 import { Product } from "@/lib/types";
 import Image from "next/image";
 
-
 export const CartItem = ({data}: {data: Product}) => { 
 
     const {image, title, id, name} = data;
@@ -49,5 +48,3 @@ export const CartItem = ({data}: {data: Product}) => {
         </div>   
     );
 };
-
-

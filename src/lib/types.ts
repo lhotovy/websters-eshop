@@ -68,4 +68,4 @@ export type NavLink = {
 
 declare global {
     var prisma: PrismaClient | undefined;
-  }
+};

@@ -1,4 +1,5 @@
 "use client"
+
 import { CartItem } from '@/components/cartItem';
 import { ShopContext } from '@/lib/context';
 import { useContext } from 'react';
@@ -6,14 +7,12 @@ import { products } from '@/data/products';
 import Link from 'next/link';
 import { Header } from '@/components/header';
 import { Product } from '@/lib/types';
-import { useRouter } from 'next/navigation';
 import EshopButton from '@/components/eshopButton';
 
 const CartContainer = () => {
   
   const {cartItems, getCartTotal, clearCart} = useContext(ShopContext);
   const totalAmount = getCartTotal();
-  const router = useRouter();
 
   return (
     <>

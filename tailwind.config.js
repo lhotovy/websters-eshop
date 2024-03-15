@@ -12,12 +12,9 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-      fontFamily: {
-        "cardo": ["Cardo", "serif"],
+      fontFamily: {    
         "noto": ["Noto Serif", "serif"],
-        "borel": ["Borel", "cursive"],
-        "merriweather": ["Merriweather", "serif"],  
-        "kanit": ["Kanit", "sans-serif"]
+        "borel": ["Borel", "cursive"]
       },
     },
   },
