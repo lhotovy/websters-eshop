@@ -1,5 +1,5 @@
 "use client"
-import { createContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { products } from '@/data/products';
 import { Cart, Context } from './types';
 
@@ -66,3 +66,11 @@ export const ShopContextProvider = ({ children }: { children: React.ReactNode })
     </ShopContext.Provider>
   );
 };
+
+export const useShopContext = () => {
+  const context = useContext(ShopContext)
+  if (!context) {
+    throw new Error("useShopContext must be used within a ShopContextProvider")
+  }
+  return context;
+}

@@ -1,13 +1,12 @@
 import Link from "next/link";
-import { ShopContext } from "@/lib/context";
-import { useContext }  from "react";
+import { useShopContext } from "@/lib/context";
 import { Product } from "@/lib/types";
 import Image from "next/image";
 
 export const CartItem = ({data}: {data: Product}) => { 
 
     const {image, title, id, name} = data;
-    const {cartItems, addToCart, removeFromCart, updateCartItemCount, clearCartItem} = useContext(ShopContext);
+    const {cartItems, addToCart, removeFromCart, updateCartItemCount, clearCartItem} = useShopContext();
 
     return (      
         <div className="max-w-md md:w-1/2 w-11/12  divide-y divide-gray-200 dark:divide-gray-700 mx-auto mb-4 border rounded-2xl">

@@ -2,12 +2,12 @@ import Link from "next/link";
 import React, { useContext } from 'react';
 import Tags from "./tags";
 import Image from "next/image";
-import { ShopContext } from "@/lib/context";
+import { useShopContext } from "@/lib/context";
 import { ProductListProps, Product } from "@/lib/types";
 
 export const ProductList = ({categories, shopItems, filterItems}: ProductListProps) => {
 
-const {cartItems, addToCart, getNumberOfItems} = useContext(ShopContext);
+const {cartItems, addToCart, getNumberOfItems} = useShopContext();
 const cartItemsAmount = getNumberOfItems(); 
 
   return (
